@@ -1,0 +1,45 @@
+
+/*Tag modifications*/
+
+h1, h2, p {
+	color: black;
+}
+
+p {
+	font-size: 20px;
+}
+
+img {
+	border: 1px solid black;
+}
+
+/*ID Modifications*/
+#yourScore {
+	padding: 30px auto;
+}
+
+/*Class Modificatons*/
+.container {
+	border: 1px solid black;
+	text-align: center;
+}
+
+.border {
+	border: 1px solid black;
+	height: 100px;
+	margin: 10px auto;
+}
+
+.border-img {
+	border: 1px solid black;
+	height: auto;
+	margin: 10px auto;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+}
+
+.img-responsive {
+	float: left;
+	display: inline-block;
+}
