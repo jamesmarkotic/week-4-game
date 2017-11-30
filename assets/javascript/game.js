@@ -100,5 +100,12 @@ if (currScore == currNumb) {
   reset ();
 };
 
+if (currScore > currNumb) {
+  alert('In losses');
+  losses ++;
+  $('#losses').html(losses);
+  reset ();
+};
+
 numbGen ();
 gemGen ();
