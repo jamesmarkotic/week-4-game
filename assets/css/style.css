@@ -2,7 +2,7 @@
 /*Tag modifications*/
 
 h1, h2, p {
-	color: black;
+	color: white;
 }
 
 p {
@@ -13,6 +13,9 @@ img {
 	border: 1px solid black;
 }
 
+/*body {
+	background: #36CDF9;
+}*/
 
 /*Class Modificatons*/
 .container {
@@ -38,4 +41,9 @@ img {
 .img-responsive {
 	float: left;
 	display: inline-block;
+}
+
+/*Class color modificatios*/
+.backColor {
+	background: #00AADC;
 }

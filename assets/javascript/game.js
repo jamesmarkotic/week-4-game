@@ -19,8 +19,8 @@ var gemNumb2;
 var gemNumb3;
 var gemNumb4;
 var currScore = 0;
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
 
 // Random Generating Functions
 function numbGen () {
@@ -43,18 +43,38 @@ function gemGen () {
   console.log($('#green').val());
 }
 
-// Assigning Gems and currNumb random numbers in value
-// function gemAssign () {
-//
-//
-// }
+// Game reset
+function reset () {
+    gemNumb1 = 0;
+    gemNumb2 = 0;
+    gemNumb3 = 0;
+    gemNumb4 = 0;
+    numbGen ();
+    gemGen ();
+    currScore = 0;
+    $('#currScore').html(currScore);
+};
 
 
 
-// On click Functions
+
+// On click Functions // Added functioning win/loss condition
 $('#purp').on('click', function () {
   currScore = currScore + gemNumb1;
   $('#currScore').html(currScore);
+  if (currNumb == currScore) {
+    alert('In wins');
+    wins = wins ++;
+    $('#wins').html(wins);
+    setTimeout(reset(), 500)
+  }
+
+  else if (currScore > currNumb) {
+    alert('In losses');
+    losses ++;
+    $('#losses').html(losses);
+    setTimeout(reset(), 500)
+  }
   console.log(currScore);
   console.log(currNumb);
 });
@@ -62,6 +82,19 @@ $('#purp').on('click', function () {
 $('#blue').on('click', function () {
   currScore = currScore + gemNumb2;
   $('#currScore').html(currScore);
+  if (currNumb == currScore) {
+    alert('In wins');
+    wins ++;
+    $('#wins').html(wins);
+    setTimeout(reset(), 500)
+  }
+
+  else if (currScore > currNumb) {
+    alert('In losses');
+    losses ++;
+    $('#losses').html(losses);
+    setTimeout(reset(), 500)
+  }
   console.log(currScore);
   console.log(currNumb);
 });
@@ -69,6 +102,19 @@ $('#blue').on('click', function () {
 $('#yellow').on('click', function () {
   currScore = currScore + gemNumb3;
   $('#currScore').html(currScore);
+  if (currNumb == currScore) {
+    alert('In wins');
+    wins ++;
+    $('#wins').html(wins);
+    setTimeout(reset(), 500)
+  }
+
+  else if (currScore > currNumb) {
+    alert('In losses');
+    losses ++;
+    $('#losses').html(losses);
+    setTimeout(reset(), 500)
+  }
   console.log(currScore);
   console.log(currNumb);
 });
@@ -76,36 +122,22 @@ $('#yellow').on('click', function () {
 $('#green').on('click', function () {
   currScore = currScore + gemNumb4;
   $('#currScore').html(currScore);
+  if (currNumb == currScore) {
+    alert('In wins');
+    wins ++;
+    $('#wins').html(wins);
+    setTimeout(reset(), 500)
+  }
+
+  else if (currScore > currNumb) {
+    alert('In losses');
+    losses ++;
+    $('#losses').html(losses);
+    setTimeout(reset(), 500)
+  }
   console.log(currScore);
   console.log(currNumb);
 });
-
-
-// Reset Game Conditions (if/else)
-function reset () {
-    currNumb = 0;
-    currScore = 0
-    gemNumb1 = 0;
-    gemNumb2 = 0;
-    gemNumb3 = 0;
-    gemNumb4 = 0;
-    numbGen ();
-    gemGen ();
-};
-
-if (currScore == currNumb) {
-  alert('In wins');
-  wins ++;
-  $('#wins').html(wins);
-  reset ();
-};
-
-if (currScore > currNumb) {
-  alert('In losses');
-  losses ++;
-  $('#losses').html(losses);
-  reset ();
-};
 
 numbGen ();
 gemGen ();
